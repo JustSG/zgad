@@ -62,11 +62,9 @@ public class Main{
                 System.out.println("Wpisano za dużo");
             }
         }
-        while (wpisanaLiczba != wylosowanaLiczba){
+        while (wpisanaLiczba != wylosowanaLiczba);
             System.out.println("Podaj liczbę");
             wpisanaLiczba = klawiatura.nextInt();
-        }
-
 
     }
 }
