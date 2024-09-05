@@ -40,7 +40,8 @@ public class Main{
             default -> "Słabo!";
         });
 
-        for (int i = 0; i < 10; i++) { //zgadujemy 10 razy
+        //zgadujemy 10 razy
+        for (int i = 0; i < 10; i++) {
             System.out.println("Podaj liczbę");
             wpisanaLiczba = klawiatura.nextInt();
             if (wpisanaLiczba == wylosowanaLiczba){
@@ -51,11 +52,21 @@ public class Main{
             }
         }
 
+        //zgadujemy aż do skutku
+        do{
+            System.out.println("Podaj liczbę");
+            wpisanaLiczba = klawiatura.nextInt();
+            if (wylosowanaLiczba>wpisanaLiczba){
+                System.out.println("Wpisano za mało");
+            }else{
+                System.out.println("Wpisano za dużo");
+            }
+        }
         while (wpisanaLiczba != wylosowanaLiczba){
             System.out.println("Podaj liczbę");
             wpisanaLiczba = klawiatura.nextInt();
-            System.out.println("Nie zgadłeś!");
         }
+
 
     }
 }
