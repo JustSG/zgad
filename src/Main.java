@@ -4,23 +4,23 @@ public class Main{
     public static void main(String[] args) {
         System.out.println("Hello world!");
         System.out.println("Dzień Dobry Polsko!");
-        int wylosowanaLiczba = (int)(Math.random()*100+1); //rzutowanie
+        int wylosowanaLiczba = (int) (Math.random() * 100 + 1); //rzutowanie
         System.out.println(wylosowanaLiczba);
 
         System.out.println("Zgadnij liczbę");
         Scanner klawiatura = new Scanner(System.in); //nowy obiekt klasy skaner, system.in znaczy że wprowadza z klawiatury
         int wpisanaLiczba = klawiatura.nextInt();  //wylosowuje liczbe
 
-        if(wpisanaLiczba == wylosowanaLiczba){
+        if (wpisanaLiczba == wylosowanaLiczba) {
             System.out.println("Gratulacje, wygrana!");
-        }else{
+        } else {
             System.out.println("Przegrana!");
         }
-        int roznica = wylosowanaLiczba>wpisanaLiczba? wylosowanaLiczba - wpisanaLiczba : wpisanaLiczba - wylosowanaLiczba; //wyrażenie warunkowe, które zwraca wartość
+        int roznica = wylosowanaLiczba > wpisanaLiczba ? wylosowanaLiczba - wpisanaLiczba : wpisanaLiczba - wylosowanaLiczba; //wyrażenie warunkowe, które zwraca wartość
         System.out.println("Różnica pomiędzy liczbami wyniosła: " + roznica);
-        roznica = roznica/10; //dzielenie całkowite
+        roznica = roznica / 10; //dzielenie całkowite
 
-        switch (roznica){
+        switch (roznica) {
             case 0:
                 System.out.println("Brawo!");
                 break;
@@ -30,9 +30,33 @@ public class Main{
             case 2:
                 System.out.println("Blisko!");
                 break;
-            case 3:
+            default:
                 System.out.println("Słabo!");
         }
+        System.out.println(switch (roznica) {
+            case 0 -> "Brawo!";
+            case 1 -> "Bardzo blisko!";
+            case 2 -> "Blisko!";
+            default -> "Słabo!";
+        });
+
+        for (int i = 0; i < 10; i++) { //zgadujemy 10 razy
+            System.out.println("Podaj liczbę");
+            wpisanaLiczba = klawiatura.nextInt();
+            if (wpisanaLiczba == wylosowanaLiczba){
+                System.out.println("Zgadłeś!");
+                break;
+            }else{
+                System.out.println("Nie zgadłeś!");
+            }
+        }
+
+        while (wpisanaLiczba != wylosowanaLiczba){
+            System.out.println("Podaj liczbę");
+            wpisanaLiczba = klawiatura.nextInt();
+            System.out.println("Nie zgadłeś!");
+        }
+
     }
 }
 /*Nazwa pliku i nazwa klasy muszą być takie same
