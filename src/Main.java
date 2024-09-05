@@ -19,6 +19,20 @@ public class Main{
         int roznica = wylosowanaLiczba>wpisanaLiczba? wylosowanaLiczba - wpisanaLiczba : wpisanaLiczba - wylosowanaLiczba; //wyrażenie warunkowe, które zwraca wartość
         System.out.println("Różnica pomiędzy liczbami wyniosła: " + roznica);
         roznica = roznica/10; //dzielenie całkowite
+
+        switch (roznica){
+            case 0:
+                System.out.println("Brawo!");
+                break;
+            case 1:
+                System.out.println("Bardzo blisko!");
+                break;
+            case 2:
+                System.out.println("Blisko!");
+                break;
+            case 3:
+                System.out.println("Słabo!");
+        }
     }
 }
 /*Nazwa pliku i nazwa klasy muszą być takie same
